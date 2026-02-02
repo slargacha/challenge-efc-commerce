@@ -47,7 +47,7 @@ A alto nivel, la solución contempla:
 
 ### - Diagrama de Arquitectura
 
-
+![Arquitectura E-commerce](arquitectura_ecommerce.png)
 
 ### - Descripción General
 
