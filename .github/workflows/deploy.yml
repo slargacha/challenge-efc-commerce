@@ -1,0 +1,53 @@
+# Workflow para desplegar infraestructura AWS del e-commerce JFC
+name: Deploy Infrastructure
+
+# Se ejecuta solo cuando se hace push a la rama main
+on:
+  push:
+    branches: [main]
+
+# Variables globales del workflow
+env:
+  AWS_REGION: us-east-1
+
+jobs:
+  deploy:
+    name: Deploy AWS Infrastructure
+    runs-on: ubuntu-latest
+    
+    steps:
+    # Descargar el código del repositorio
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    # Instalar Terraform en el runner
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v3
+      with:
+        terraform_version: 1.5.0
+
+    # Configurar credenciales de AWS usando secrets del repositorio
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+
+    # Inicializar Terraform (descargar providers y módulos)
+    - name: Terraform Init
+      run: |
+        cd terraform
+        terraform init
+
+    # Mostrar qué recursos se van a crear/modificar/eliminar
+    - name: Terraform Plan
+      run: |
+        cd terraform
+        terraform plan
+
+    # Aplicar los cambios automáticamente sin confirmación manual
+    - name: Terraform Apply
+      run: |
+        cd terraform
+        terraform apply -auto-approve
