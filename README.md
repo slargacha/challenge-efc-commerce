@@ -13,7 +13,7 @@
 **Teléfono:** 312 728 4537  
 **Correo electrónico:** chitas1004@hotmail.com
 
-Sebastián Largacha es Analista de CloudOps con experiencia en diseño, automatización y operación de arquitecturas en la nube sobre Amazon Web Services (AWS), enfocado en soluciones escalables, seguras y optimizadas en costos, alineadas a buenas prácticas de arquitectura cloud.
+Analista de CloudOps con experiencia en diseño, automatización y operación de arquitecturas en la nube sobre Amazon Web Services (AWS), enfocado en soluciones escalables, seguras y optimizadas en costos, alineadas a buenas prácticas de arquitectura cloud.
 
 ---
 
