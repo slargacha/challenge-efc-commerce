@@ -9,7 +9,7 @@
 ## 👤 Presentación
 
 **Nombre:** Sebastián Largacha  
-**Profesión:** Analista de CloudOps (AWS) 
+**Profesión:** Analista de CloudOps (AWS)  
 **Teléfono:** 312 728 4537  
 **Correo electrónico:** chitas1004@hotmail.com
 
